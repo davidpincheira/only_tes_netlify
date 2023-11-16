@@ -2,7 +2,7 @@
   "name": "back",
   "version": "1.0.0",
   "description": "",
-  "main": "src/api.js",
+  "main": "index.js",
   "homepage": "/",
   "scripts": {
     "dev": "nodemon src/api.js",
