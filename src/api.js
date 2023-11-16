@@ -1,7 +1,8 @@
 const express = require("express");
 const serverless = require("serverless-http");
-
 const app = express();
+var server = require('http').createServer(app);
+
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -24,6 +25,10 @@ router.post('/testpost',(req,res) => {
 })
 
 app.use(`/.netlify/functions/api`, router);
+
+server.listen(4200, function(){
+    console.log("Servidor ");
+});
 
 module.exports = app;
 module.exports.handler = serverless(app);
